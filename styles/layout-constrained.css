@@ -1,0 +1,37 @@
+.layout-constrained .header__container {
+    margin: 0 auto;
+    max-width: var(--constrained__width);
+}
+
+
+
+@media (min-width: 760px) {
+    .main {
+        max-width: calc(var(--constrained__width) - 30px);
+        margin: 0 auto;
+    }
+
+    .sidebar {
+        left: calc(((100vw - var(--constrained__width)) / 2) + 5px);
+    }
+
+    .page-content {
+        margin-left:calc(var(--sidebar__width) + 40px);
+    }
+}
+
+@media (max-width: 760px) {
+    .page-content {
+        margin-left:0;
+        padding: 30px;
+    }
+    .sidebar {
+        z-index: 2;
+    }
+    .speca-nav {
+        display: none !important;
+    }
+    .spec-item-header__controls {
+        display: none !important;
+    }
+}

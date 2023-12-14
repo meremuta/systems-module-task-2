@@ -1,0 +1,10 @@
+:root {
+  --doc__background-color: #ffffff;
+  --sidebar-header__background-color: #53667f;
+  --sidebar-logo__background-color: #fff;
+  --sidebar-items__background-color: #f6fafc;
+  --sidebar-items__hover__background-color: #e9f4f9;
+  --sidebar-items__color: #777;
+  --sidebar-items-group__color: #444;
+  --examples__background-color: #f6f8f8;
+  --tab-label__color: #555; }

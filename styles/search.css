@@ -1,0 +1,112 @@
+.sidebar-search {
+    min-height: 30px;
+    position: relative;
+    background-color: var(--sidebar-item__background-color);
+}
+
+.sidebar-search > .search-icon {
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    font-size: 1.2em;
+}
+
+.sidebar-search > .search-clear {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    opacity: 0;
+    padding: 3px;
+    cursor: pointer;
+}
+.sidebar-search > .search-icon{
+    color: var(--sidebar-item__color);
+    opacity: 0.85;
+}
+
+
+.sidebar-search-results {
+    max-height: 200px;
+    font-size: 13px;
+    overflow: auto;
+    padding: 0;
+    list-style: none;
+    margin: 0 -5px 0 0;
+}
+
+.sidebar-search-results:not(:empty) {
+    margin: 10px -5px 10px 0;
+}
+
+.sidebar-search-results > div {
+    font-style: italic;
+    padding: 10px 20px;
+}
+
+.sidebar-search-results > li {
+    height: 30px;
+    transition: height 0.5s linear;
+}
+
+
+.sidebar-search-results > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--sidebar-item__color);
+}
+
+.sidebar-search-results > li > a:hover, .sidebar-search-results > li > a:active {
+    color: var(--sidebar-item-active__color);
+    background-color: var(--sidebar-item-active__background-color);
+    transition: all 0.2s linear;
+}
+
+.sidebar-search > input {
+    width: 100%;
+    padding: 12px 30px;
+    display: inline;
+    font-size: 14px;
+    background: none;
+    color: var(--sidebar-items-group__color);
+    border: none !important;
+    outline: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid #ddd !important;
+    transition: border-bottom-color 0.2s linear;
+}
+
+.sidebar-search > input::placeholder {
+
+}
+
+.sidebar-search > input:active, .sidebar-search > input:focus {
+    border-bottom: 1px solid #bbb !important;
+}
+
+.sidebar-search > input:not(:placeholder-shown) + .search-clear {
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+}
+
+.sidebar-search > input:focus + i + .sidebar-search-results {
+
+}
+
+.sidebar-search-results::-webkit-scrollbar {
+    width: 4px;
+    /*background: black;*/
+}
+
+.sidebar-search-results::-webkit-scrollbar-track {
+    /*background: #ddd;*/
+}
+
+.sidebar-search-results::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #eee;
+}

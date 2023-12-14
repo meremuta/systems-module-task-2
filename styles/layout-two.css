@@ -1,0 +1,36 @@
+.main {
+    margin-left: var(--sidebar__width);
+}
+
+.page-content {
+    padding: 40px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.method-example {
+    display: block !important;
+}
+
+.spec-item-examples__code {
+    padding: 0 20px;
+}
+
+@media (min-width: 300px) and (max-width: 760px) {
+    .main {
+        margin-left: 0px;
+    }
+    .page-content {
+        margin-left:0;
+        padding: 30px;
+    }
+    .sidebar {
+        z-index: 2;
+    }
+    .speca-nav {
+        display: none !important;
+    }
+    .spec-item-header__controls {
+        display: none !important;
+    }
+}

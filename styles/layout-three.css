@@ -1,0 +1,82 @@
+.page-content {
+    padding: 0 0 0 var(--sidebar__width);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.spec-item, .spec-item--common {
+    display: flex;
+    padding-left: 30px;
+}
+
+.spec-item--common > .spec-item-examples{
+    display: flex;
+    padding: 0;
+}
+
+.spec-item-copy {
+    flex: 0 0 var(--content__width);
+    min-width: 0;
+    padding-right: 30px;
+}
+
+.spec-item-examples {
+    flex: 1;
+    min-width: 0;
+}
+
+.method-example__code > pre {
+    max-height: 800px;
+    overflow: auto;
+}
+
+.spec-item--last {
+    flex: 1 0 150px;
+}
+
+.schema-examples {
+    margin-top: 110px;
+    margin-left: 0;
+}
+
+.schema-examples__example:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.schema-examples__example > div {
+    margin: 15px;
+}
+
+@media (min-width: 300px) and (max-width: 1100px) {
+    .spec-item, .spec-item--common {
+        flex-direction: column;
+    }
+
+    .spec-item-examples {
+        background-color: white;
+    }
+
+    .item-examples-tabs {
+        margin: 10px 15px 10px 15px;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 760px) {
+    .sidebar {
+        position: fixed;
+        z-index: 10;
+    }
+
+    .page-content {
+        padding: 0 0 30px 5px;
+    }
+
+    .speca-nav, .spec-item-header .btn-group {
+        display: none;
+    }
+}
+
+.layout-three .header__container {
+    padding: 8px 20px;
+}

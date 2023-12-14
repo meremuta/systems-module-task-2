@@ -1,0 +1,14 @@
+:root {
+  --sidebar-header__background-color: #000;
+  --sidebar-logo__background-color: #000;
+  --examples__background-color: #2d3134;
+  --sidebar-items__background-color: #333;
+  --sidebar-items__hover__background-color: #262626;
+  --sidebar-items__color: #ddd;
+  --sidebar-items-group__color: #aaa;
+  --doc__background-color: lavender;
+  --tab-label__color: #eee; }
+
+.description pre {
+  background-color: transparent;
+  border: none; }

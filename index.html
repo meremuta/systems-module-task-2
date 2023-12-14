@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="charset" content="utf-8"/>
+        <title>Systems Module Task 2</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+               
+        <link rel="stylesheet" href="styles/icons-font.css" type="text/css"/>
+        <link rel="stylesheet" href="styles/speca.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="styles/layout-three.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/prism-theme-light.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/search.css"/>
+        <script src="js/speca.js" type="text/javascript" defer></script>
+       <script>
+            window.Prism = window.Prism || {};
+            window.Prism.manual = true;           
+        </script><script src="js/flexsearch.min.js" type="text/javascript" defer></script><script src="js/search.js" type="text/javascript" defer></script></head>
+    <body class="layout-three with-header">
+            <div class="header">
+                <div class="header__container">
+                        <div class="header__brand">
+                            <div class="header__name">
+                                <div class="header__title">Systems Module Task 2</div>
+                                <div class="header__versions">
+                                    <div class="header__by">by 
+                                        <a href="https://speca.io/meremuta" title="meremuta">meremuta</a></div></div></div></div></div></div>
+            <div class="sidebar sidebar--with-header">
+                <ul class="sidebar-items sidebar-item__nested">
+                    <li class="sidebar-item" data-item-type="group">
+                        <a href="#operations" title="Operations">
+                            <span class="sidebar-item__name">Operations</span>
+                            <i class="fa fa-angle-right" style="float: right"></i></a>
+                        <ul class="sidebar-item__nested">
+                            <li class="sidebar-item" data-item-type="group">
+                                <a href="#User_group" title="User">
+                                    <span class="sidebar-item__name">User</span>
+                                    <i class="fa fa-angle-right" style="float: right"></i></a>
+                                <ul class="sidebar-item__nested">
+                                    <li class="sidebar-item" data-item-type="method">
+                                        <a href="#reg_post" title="POST /register - reg_post">
+                                            <span class="sidebar-item__name">
+                                                <span class="http-method" data-method="POST">POST</span>
+                                                <span>/register</span></span></a></li>
+                                    <li class="sidebar-item" data-item-type="method">
+                                        <a href="#remind_get" title="GET /remind - remind_get">
+                                            <span class="sidebar-item__name">
+                                                <span class="http-method" data-method="GET">GET</span>
+                                                <span>/remind</span></span></a></li></ul></li>
+                            <li class="sidebar-item" data-item-type="group">
+                                <a href="#AnimeLists_group" title="AnimeLists">
+                                    <span class="sidebar-item__name">AnimeLists</span>
+                                    <i class="fa fa-angle-right" style="float: right"></i></a>
+                                <ul class="sidebar-item__nested">
+                                    <li class="sidebar-item" data-item-type="method">
+                                        <a href="#wish_post" title="POST /addToWishlist - wish_post">
+                                            <span class="sidebar-item__name">
+                                                <span class="http-method" data-method="POST">POST</span>
+                                                <span>/addToWishlist</span></span></a></li>
+                                    <li class="sidebar-item" data-item-type="method">
+                                        <a href="#wish_get" title="GET /getWishlist - wish_get">
+                                            <span class="sidebar-item__name">
+                                                <span class="http-method" data-method="GET">GET</span>
+                                                <span>/getWishlist</span></span></a></li>
+                                    <li class="sidebar-item" data-item-type="method">
+                                        <a href="#deleteFromWishlist" title="DELETE /deleteWish - deleteFromWishlist">
+                                            <span class="sidebar-item__name">
+                                                <span class="http-method" data-method="DELETE">DELETE</span>
+                                                <span>/deleteWish</span></span></a></li>
+                                    <li class="sidebar-item" data-item-type="method">
+                                        <a href="#watched_post" title="POST /postWatched - watched_post">
+                                            <span class="sidebar-item__name">
+                                                <span class="http-method" data-method="POST">POST</span>
+                                                <span>/postWatched</span></span></a></li>
+                                    <li class="sidebar-item" data-item-type="method">
+                                        <a href="#deleteFromWachedlist" title="DELETE /deleteWatched - deleteFromWachedlist">
+                                            <span class="sidebar-item__name">
+                                                <span class="http-method" data-method="DELETE">DELETE</span>
+                                                <span>/deleteWatched</span></span></a></li>
+                                    <li class="sidebar-item" data-item-type="method">
+                                        <a href="#watched_get" title="GET /getWatchedlist - watched_get">
+                                            <span class="sidebar-item__name">
+                                                <span class="http-method" data-method="GET">GET</span>
+                                                <span>/getWatchedlist</span></span></a></li></ul></li>
+                            <li class="sidebar-item" data-item-type="group">
+                                <a href="#Other_group" title="Other">
+                                    <span class="sidebar-item__name">Other</span>
+                                    <i class="fa fa-angle-right" style="float: right"></i></a>
+                                <ul class="sidebar-item__nested">
+                                    <li class="sidebar-item" data-item-type="method">
+                                        <a href="#Default" title="GET / - Default">
+                                            <span class="sidebar-item__name">
+                                                <span class="http-method" data-method="GET">GET</span>
+                                                <span>/</span></span></a></li>
+                                    <li class="sidebar-item" data-item-type="method">
+                                        <a href="#search_get" title="GET /search - search_get">
+                                            <span class="sidebar-item__name">
+                                                <span class="http-method" data-method="GET">GET</span>
+                                                <span>/search</span></span></a></li>
+                                    <li class="sidebar-item" data-item-type="method">
+                                        <a href="#recom_get" title="GET /recom - recom_get">
+                                            <span class="sidebar-item__name">
+                                                <span class="http-method" data-method="GET">GET</span>
+                                                <span>/recom</span></span></a></li>
+                                    <li class="sidebar-item" data-item-type="method">
+                                        <a href="#quote_get" title="GET /quote - quote_get">
+                                            <span class="sidebar-item__name">
+                                                <span class="http-method" data-method="GET">GET</span>
+                                                <span>/quote</span></span></a></li></ul></li></ul></li>
+                    <li class="sidebar-item" data-item-type="group">
+                        <a href="#schemas" title="Type Definitions">
+                            <span class="sidebar-item__name">Type Definitions</span>
+                            <i class="fa fa-angle-right" style="float: right"></i></a>
+                        <ul class="sidebar-item__nested">
+                            <li class="sidebar-item" data-item-type="schema">
+                                <a href="#Quote" title="Quote">
+                                    <span class="sidebar-item__name">Quote</span></a></li>
+                            <li class="sidebar-item" data-item-type="schema">
+                                <a href="#SecretKey" title="SecretKey">
+                                    <span class="sidebar-item__name">SecretKey</span></a></li>
+                            <li class="sidebar-item" data-item-type="schema">
+                                <a href="#Search" title="Search">
+                                    <span class="sidebar-item__name">Search</span></a></li>
+                            <li class="sidebar-item" data-item-type="schema">
+                                <a href="#WatchedItem" title="WatchedItem">
+                                    <span class="sidebar-item__name">WatchedItem</span></a></li>
+                            <li class="sidebar-item" data-item-type="schema">
+                                <a href="#WishItem" title="WishItem">
+                                    <span class="sidebar-item__name">WishItem</span></a></li>
+                            <li class="sidebar-item" data-item-type="schema">
+                                <a href="#WishAdded" title="WishAdded">
+                                    <span class="sidebar-item__name">WishAdded</span></a></li>
+                            <li class="sidebar-item" data-item-type="schema">
+                                <a href="#WatchedAdded" title="WatchedAdded">
+                                    <span class="sidebar-item__name">WatchedAdded</span></a></li>
+                            <li class="sidebar-item" data-item-type="schema">
+                                <a href="#RecomItem" title="RecomItem">
+                                    <span class="sidebar-item__name">RecomItem</span></a></li></ul></li>
+                    <li style="height:100px"></li></ul></div>
+        <div class="main">
+            <div class="page-content">
+                    <div class="spec-item spec-item__n-1">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-content">
+                                <div class="spec-header" id="top">
+                                    <h1>Systems Module Task 2</h1></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-1 spec-item__type-group">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="operations">
+                                <div class="spec-item-header" data-entity="group" data-entity-id="operations">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#operations"></a>Operations</div></div></div>
+                            <div class="spec-item-content"></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-2 spec-item__type-group">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="User_group">
+                                <div class="spec-item-header" data-entity="group" data-entity-id="User_group">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#User_group"></a>User</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="description spec-item__description"><p>Operations with user</p>
+</div>
+                                <div class="spec-item-section">
+                                    <div class="group-methods-summary">
+                                        <div class="group-methods-row">
+                                            <div class="group-methods-row__left">
+                                                <a class="group-methods-row__method" href="#reg_post">reg_post</a></div>
+                                            <div class="group-methods-row__right">
+                                                <span class="http-method small" data-method="POST">POST</span>
+                                                <span class="http-url">/register</span></div></div>
+                                        <div class="group-methods-row">
+                                            <div class="group-methods-row__left">
+                                                <a class="group-methods-row__method" href="#remind_get">remind_get</a></div>
+                                            <div class="group-methods-row__right">
+                                                <span class="http-method small" data-method="GET">GET</span>
+                                                <span class="http-url">/remind</span></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-3 spec-item__type-method">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="reg_post">
+                                <div class="spec-item-header" data-entity="method" data-entity-id="reg_post">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#reg_post"></a>reg_post</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-attributes"></div>
+                                <div class="spec-item-section">
+                                    <div class="method-http-details">
+                                        <span class="http-method" data-method="POST">POST</span>
+                                        <span class="http-url">/register</span></div></div>
+                                <div class="description spec-item__description"><p>Registration of new user</p>
+</div>
+                                <div class="spec-item-section">
+                                    <h4>Request parameters</h4>
+                                    <div class="parameters-list">
+                                            <div class="param">
+                                                <div class="param__left">
+                                                    <div class="schema-property__name">
+                                                        <span>login</span></div>
+                                                    <div class="schema-property__type">
+                                                        <span class="primitive">string</span>
+                                                        <i class="schema-property__required" data-required="false">optional</i></div></div>
+                                                <div class="param__right">
+                                                    <div class="description"><p>User login</p>
+</div></div></div>
+                                            <div class="param">
+                                                <div class="param__left">
+                                                    <div class="schema-property__name">
+                                                        <span>password</span></div>
+                                                    <div class="schema-property__type">
+                                                        <span class="primitive">string</span>
+                                                        <i class="schema-property__required" data-required="false">optional</i></div></div>
+                                                <div class="param__right">
+                                                    <div class="description"><p>User password</p>
+</div></div></div></div></div>
+                                <div class="spec-item-section">
+                                    <h4>Responses</h4>
+                                    <div class="method-responses">
+                                        <div class="method-response">
+                                                <div class="response-details">
+                                                    <div class="response-details__left">
+                                                        <span class="response-details__status" data-response-status="200">200</span>
+                                                        <span class="response-details__name">200</span></div>
+                                                    <div class="response-details__right">
+                                                        <div class="description"><p>Successful operation</p>
+</div></div></div>
+                                                <div class="response-content">
+                                                    <div class="response-body">
+                                                        <h5 class="response-body__header">Body</h5>
+                                                        <div class="content-types">
+                                                            <div class="content-type">application/json</div></div>
+                                                            <div class="schema">
+                                                                <div class="schema-property__definition">
+                                                                    <div class="schema-property__left">
+                                                                        <div class="schema__type">
+                                                                            <a class="item-ref" href="#SecretKey">SecretKey</a></div></div>
+                                                                    <div class="schema-property__right"></div></div></div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-3 spec-item__type-method">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="remind_get">
+                                <div class="spec-item-header" data-entity="method" data-entity-id="remind_get">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#remind_get"></a>remind_get</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-attributes"></div>
+                                <div class="spec-item-section">
+                                    <div class="method-http-details">
+                                        <span class="http-method" data-method="GET">GET</span>
+                                        <span class="http-url">/remind</span></div></div>
+                                <div class="description spec-item__description"><p>Remind user Secret Key</p>
+</div>
+                                <div class="spec-item-section">
+                                    <h4>Request parameters</h4>
+                                    <div class="parameters-list">
+                                            <div class="param">
+                                                <div class="param__left">
+                                                    <div class="schema-property__name">
+                                                        <span>login</span></div>
+                                                    <div class="schema-property__type">
+                                                        <span class="primitive">string</span>
+                                                        <i class="schema-property__required" data-required="false">optional</i></div></div>
+                                                <div class="param__right">
+                                                    <div class="description"><p>User login</p>
+</div></div></div>
+                                            <div class="param">
+                                                <div class="param__left">
+                                                    <div class="schema-property__name">
+                                                        <span>password</span></div>
+                                                    <div class="schema-property__type">
+                                                        <span class="primitive">string</span>
+                                                        <i class="schema-property__required" data-required="false">optional</i></div></div>
+                                                <div class="param__right">
+                                                    <div class="description"><p>User password</p>
+</div></div></div></div></div>
+                                <div class="spec-item-section">
+                                    <h4>Responses</h4>
+                                    <div class="method-responses">
+                                        <div class="method-response">
+                                                <div class="response-details">
+                                                    <div class="response-details__left">
+                                                        <span class="response-details__status" data-response-status="200">200</span>
+                                                        <span class="response-details__name">200</span></div>
+                                                    <div class="response-details__right">
+                                                        <div class="description"><p>Successful operation</p>
+</div></div></div>
+                                                <div class="response-content">
+                                                    <div class="response-body">
+                                                        <h5 class="response-body__header">Body</h5>
+                                                        <div class="content-types">
+                                                            <div class="content-type">application/json</div></div>
+                                                            <div class="schema">
+                                                                <div class="schema-property__definition">
+                                                                    <div class="schema-property__left">
+                                                                        <div class="schema__type">
+                                                                            <a class="item-ref" href="#SecretKey">SecretKey</a></div></div>
+                                                                    <div class="schema-property__right"></div></div></div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-2 spec-item__type-group">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="AnimeLists_group">
+                                <div class="spec-item-header" data-entity="group" data-entity-id="AnimeLists_group">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#AnimeLists_group"></a>AnimeLists</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="description spec-item__description"><p>Operations with anime lists</p>
+</div>
+                                <div class="spec-item-section">
+                                    <div class="group-methods-summary">
+                                        <div class="group-methods-row">
+                                            <div class="group-methods-row__left">
+                                                <a class="group-methods-row__method" href="#wish_post">wish_post</a></div>
+                                            <div class="group-methods-row__right">
+                                                <span class="http-method small" data-method="POST">POST</span>
+                                                <span class="http-url">/addToWishlist</span></div></div>
+                                        <div class="group-methods-row">
+                                            <div class="group-methods-row__left">
+                                                <a class="group-methods-row__method" href="#wish_get">wish_get</a></div>
+                                            <div class="group-methods-row__right">
+                                                <span class="http-method small" data-method="GET">GET</span>
+                                                <span class="http-url">/getWishlist</span></div></div>
+                                        <div class="group-methods-row">
+                                            <div class="group-methods-row__left">
+                                                <a class="group-methods-row__method" href="#deleteFromWishlist">deleteFromWishlist</a></div>
+                                            <div class="group-methods-row__right">
+                                                <span class="http-method small" data-method="DELETE">DELETE</span>
+                                                <span class="http-url">/deleteWish</span></div></div>
+                                        <div class="group-methods-row">
+                                            <div class="group-methods-row__left">
+                                                <a class="group-methods-row__method" href="#watched_post">watched_post</a></div>
+                                            <div class="group-methods-row__right">
+                                                <span class="http-method small" data-method="POST">POST</span>
+                                                <span class="http-url">/postWatched</span></div></div>
+                                        <div class="group-methods-row">
+                                            <div class="group-methods-row__left">
+                                                <a class="group-methods-row__method" href="#deleteFromWachedlist">deleteFromWachedlist</a></div>
+                                            <div class="group-methods-row__right">
+                                                <span class="http-method small" data-method="DELETE">DELETE</span>
+                                                <span class="http-url">/deleteWatched</span></div></div>
+                                        <div class="group-methods-row">
+                                            <div class="group-methods-row__left">
+                                                <a class="group-methods-row__method" href="#watched_get">watched_get</a></div>
+                                            <div class="group-methods-row__right">
+                                                <span class="http-method small" data-method="GET">GET</span>
+                                                <span class="http-url">/getWatchedlist</span></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-3 spec-item__type-method">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="wish_post">
+                                <div class="spec-item-header" data-entity="method" data-entity-id="wish_post">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#wish_post"></a>wish_post</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-attributes"></div>
+                                <div class="spec-item-section">
+                                    <div class="method-http-details">
+                                        <span class="http-method" data-method="POST">POST</span>
+                                        <span class="http-url">/addToWishlist</span></div></div>
+                                <div class="description spec-item__description"><p>Add new title to wishlist</p>
+</div>
+                                <div class="spec-item-section">
+                                    <h4>Request parameters</h4>
+                                    <div class="parameters-list">
+                                            <div class="param">
+                                                <div class="param__left">
+                                                    <div class="schema-property__name">
+                                                        <span>uID</span></div>
+                                                    <div class="schema-property__type">
+                                                        <span class="primitive">string</span>
+                                                        <i class="schema-property__required" data-required="false">optional</i></div></div>
+                                                <div class="param__right">
+                                                    <div class="description"><p>User Secret Key</p>
+</div></div></div>
+                                            <div class="param">
+                                                <div class="param__left">
+                                                    <div class="schema-property__name">
+                                                        <span>animeID</span></div>
+                                                    <div class="schema-property__type">
+                                                        <span class="primitive">string</span>
+                                                        <i class="schema-property__required" data-required="false">optional</i></div></div>
+                                                <div class="param__right">
+                                                    <div class="description"><p>ID of anime</p>
+</div></div></div></div></div>
+                                <div class="spec-item-section">
+                                    <h4>Responses</h4>
+                                    <div class="method-responses">
+                                        <div class="method-response">
+                                                <div class="response-details">
+                                                    <div class="response-details__left">
+                                                        <span class="response-details__status" data-response-status="200">200</span>
+                                                        <span class="response-details__name">200</span></div>
+                                                    <div class="response-details__right">
+                                                        <div class="description"><p>Successful operation</p>
+</div></div></div>
+                                                <div class="response-content">
+                                                    <div class="response-body">
+                                                        <h5 class="response-body__header">Body</h5>
+                                                        <div class="content-types">
+                                                            <div class="content-type">application/json</div></div>
+                                                            <div class="schema">
+                                                                <div class="schema-property__definition">
+                                                                    <div class="schema-property__left">
+                                                                        <div class="schema__type">
+                                                                            <a class="item-ref" href="#WishAdded">WishAdded</a></div></div>
+                                                                    <div class="schema-property__right"></div></div></div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-3 spec-item__type-method">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="wish_get">
+                                <div class="spec-item-header" data-entity="method" data-entity-id="wish_get">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#wish_get"></a>wish_get</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-attributes"></div>
+                                <div class="spec-item-section">
+                                    <div class="method-http-details">
+                                        <span class="http-method" data-method="GET">GET</span>
+                                        <span class="http-url">/getWishlist</span></div></div>
+                                <div class="description spec-item__description"><p>Return user wishlist</p>
+</div>
+                                <div class="spec-item-section">
+                                    <h4>Request parameters</h4>
+                                    <div class="parameters-list">
+                                            <div class="param">
+                                                <div class="param__left">
+                                                    <div class="schema-property__name">
+                                                        <span>uID</span></div>
+                                                    <div class="schema-property__type">
+                                                        <span class="primitive">string</span>
+                                                        <i class="schema-property__required" data-required="false">optional</i></div></div>
+                                                <div class="param__right">
+                                                    <div class="description"><p>User Secret Key</p>
+</div></div></div></div></div>
+                                <div class="spec-item-section">
+                                    <h4>Responses</h4>
+                                    <div class="method-responses">
+                                        <div class="method-response">
+                                                <div class="response-details">
+                                                    <div class="response-details__left">
+                                                        <span class="response-details__status" data-response-status="200">200</span>
+                                                        <span class="response-details__name">200</span></div>
+                                                    <div class="response-details__right">
+                                                        <div class="description"><p>Successful operation</p>
+</div></div></div>
+                                                <div class="response-content">
+                                                    <div class="response-body">
+                                                        <h5 class="response-body__header">Body</h5>
+                                                        <div class="content-types">
+                                                            <div class="content-type">application/json</div></div>
+                                                            <div class="schema">
+                                                                <div class="schema-property__definition">
+                                                                    <div class="schema-property__left">
+                                                                        <div class="schema__type">
+                                                                            <a class="item-ref" href="#WishItem">WishItem</a></div></div>
+                                                                    <div class="schema-property__right"></div></div></div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-3 spec-item__type-method">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="deleteFromWishlist">
+                                <div class="spec-item-header" data-entity="method" data-entity-id="deleteFromWishlist">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#deleteFromWishlist"></a>deleteFromWishlist</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-attributes"></div>
+                                <div class="spec-item-section">
+                                    <div class="method-http-details">
+                                        <span class="http-method" data-method="DELETE">DELETE</span>
+                                        <span class="http-url">/deleteWish</span></div></div>
+                                <div class="description spec-item__description"><p>Delete anime from wishlist</p>
+</div>
+                                <div class="spec-item-section">
+                                    <h4>Request parameters</h4>
+                                    <div class="parameters-list">
+                                            <div class="param">
+                                                <div class="param__left">
+                                                    <div class="schema-property__name">
+                                                        <span>wishID</span></div>
+                                                    <div class="schema-property__type">
+                                                        <span class="primitive">string</span>
+                                                        <i class="schema-property__required" data-required="false">optional</i></div></div>
+                                                <div class="param__right">
+                                                    <div class="description"><p>Identifier of item in wishlist</p>
+</div></div></div></div></div>
+                                <div class="spec-item-section">
+                                    <h4>Responses</h4>
+                                    <div class="method-responses">
+                                        <div class="method-response">
+                                                <div class="response-details">
+                                                    <div class="response-details__left">
+                                                        <span class="response-details__status" data-response-status="200">200</span>
+                                                        <span class="response-details__name">200</span></div>
+                                                    <div class="response-details__right">
+                                                        <div class="description"><p>Successful operation</p>
+</div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-3 spec-item__type-method">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="watched_post">
+                                <div class="spec-item-header" data-entity="method" data-entity-id="watched_post">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#watched_post"></a>watched_post</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-attributes"></div>
+                                <div class="spec-item-section">
+                                    <div class="method-http-details">
+                                        <span class="http-method" data-method="POST">POST</span>
+                                        <span class="http-url">/postWatched</span></div></div>
+                                <div class="description spec-item__description"><p>Add new title to list of watched anime</p>
+</div>
+                                <div class="spec-item-section">
+                                    <h4>Request parameters</h4>
+                                    <div class="parameters-list">
+                                            <div class="param">
+                                                <div class="param__left">
+                                                    <div class="schema-property__name">
+                                                        <span>uID</span></div>
+                                                    <div class="schema-property__type">
+                                                        <span class="primitive">string</span>
+                                                        <i class="schema-property__required" data-required="false">optional</i></div></div>
+                                                <div class="param__right">
+                                                    <div class="description"><p>User Secret Key</p>
+</div></div></div>
+                                            <div class="param">
+                                                <div class="param__left">
+                                                    <div class="schema-property__name">
+                                                        <span>animeID</span></div>
+                                                    <div class="schema-property__type">
+                                                        <span class="primitive">string</span>
+                                                        <i class="schema-property__required" data-required="false">optional</i></div></div>
+                                                <div class="param__right">
+                                                    <div class="description"><p>ID of anime</p>
+</div></div></div>
+                                            <div class="param">
+                                                <div class="param__left">
+                                                    <div class="schema-property__name">
+                                                        <span>animeRate</span></div>
+                                                    <div class="schema-property__type">
+                                                        <span class="primitive">string</span>
+                                                        <i class="schema-property__required" data-required="false">optional</i></div></div>
+                                                <div class="param__right">
+                                                    <div class="description"><p>User rate of anime</p>
+</div></div></div></div></div>
+                                <div class="spec-item-section">
+                                    <h4>Responses</h4>
+                                    <div class="method-responses">
+                                        <div class="method-response">
+                                                <div class="response-details">
+                                                    <div class="response-details__left">
+                                                        <span class="response-details__status" data-response-status="200">200</span>
+                                                        <span class="response-details__name">200</span></div>
+                                                    <div class="response-details__right">
+                                                        <div class="description"><p>Successful operation</p>
+</div></div></div>
+                                                <div class="response-content">
+                                                    <div class="response-body">
+                                                        <h5 class="response-body__header">Body</h5>
+                                                        <div class="content-types">
+                                                            <div class="content-type">application/json</div></div>
+                                                            <div class="schema">
+                                                                <div class="schema-property__definition">
+                                                                    <div class="schema-property__left">
+                                                                        <div class="schema__type">
+                                                                            <a class="item-ref" href="#WatchedAdded">WatchedAdded</a></div></div>
+                                                                    <div class="schema-property__right"></div></div></div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-3 spec-item__type-method">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="deleteFromWachedlist">
+                                <div class="spec-item-header" data-entity="method" data-entity-id="deleteFromWachedlist">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#deleteFromWachedlist"></a>deleteFromWachedlist</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-attributes"></div>
+                                <div class="spec-item-section">
+                                    <div class="method-http-details">
+                                        <span class="http-method" data-method="DELETE">DELETE</span>
+                                        <span class="http-url">/deleteWatched</span></div></div>
+                                <div class="description spec-item__description"><p>Delete anime from wached list</p>
+</div>
+                                <div class="spec-item-section">
+                                    <h4>Request parameters</h4>
+                                    <div class="parameters-list">
+                                            <div class="param">
+                                                <div class="param__left">
+                                                    <div class="schema-property__name">
+                                                        <span>watchID</span></div>
+                                                    <div class="schema-property__type">
+                                                        <span class="primitive">string</span>
+                                                        <i class="schema-property__required" data-required="false">optional</i></div></div>
+                                                <div class="param__right">
+                                                    <div class="description"><p>Identifier of item in wached list</p>
+</div></div></div></div></div>
+                                <div class="spec-item-section">
+                                    <h4>Responses</h4>
+                                    <div class="method-responses">
+                                        <div class="method-response">
+                                                <div class="response-details">
+                                                    <div class="response-details__left">
+                                                        <span class="response-details__status" data-response-status="200">200</span>
+                                                        <span class="response-details__name">200</span></div>
+                                                    <div class="response-details__right">
+                                                        <div class="description"><p>Successful operation</p>
+</div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-3 spec-item__type-method">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="watched_get">
+                                <div class="spec-item-header" data-entity="method" data-entity-id="watched_get">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#watched_get"></a>watched_get</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-attributes"></div>
+                                <div class="spec-item-section">
+                                    <div class="method-http-details">
+                                        <span class="http-method" data-method="GET">GET</span>
+                                        <span class="http-url">/getWatchedlist</span></div></div>
+                                <div class="description spec-item__description"><p>Get user’s list of watched anime</p>
+</div>
+                                <div class="spec-item-section">
+                                    <h4>Request parameters</h4>
+                                    <div class="parameters-list">
+                                            <div class="param">
+                                                <div class="param__left">
+                                                    <div class="schema-property__name">
+                                                        <span>uID</span></div>
+                                                    <div class="schema-property__type">
+                                                        <span class="primitive">string</span>
+                                                        <i class="schema-property__required" data-required="false">optional</i></div></div>
+                                                <div class="param__right">
+                                                    <div class="description"><p>User Secret Key</p>
+</div></div></div></div></div>
+                                <div class="spec-item-section">
+                                    <h4>Responses</h4>
+                                    <div class="method-responses">
+                                        <div class="method-response">
+                                                <div class="response-details">
+                                                    <div class="response-details__left">
+                                                        <span class="response-details__status" data-response-status="200">200</span>
+                                                        <span class="response-details__name">200</span></div>
+                                                    <div class="response-details__right">
+                                                        <div class="description"><p>Successful operation</p>
+</div></div></div>
+                                                <div class="response-content">
+                                                    <div class="response-body">
+                                                        <h5 class="response-body__header">Body</h5>
+                                                        <div class="content-types">
+                                                            <div class="content-type">application/json</div></div>
+                                                            <div class="schema">
+                                                                <div class="schema-property__definition">
+                                                                    <div class="schema-property__left">
+                                                                        <div class="schema__type">
+                                                                            <a class="item-ref" href="#WatchedItem">WatchedItem</a></div></div>
+                                                                    <div class="schema-property__right"></div></div></div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-2 spec-item__type-group">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="Other_group">
+                                <div class="spec-item-header" data-entity="group" data-entity-id="Other_group">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#Other_group"></a>Other</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="description spec-item__description"><p>Other operations</p>
+</div>
+                                <div class="spec-item-section">
+                                    <div class="group-methods-summary">
+                                        <div class="group-methods-row">
+                                            <div class="group-methods-row__left">
+                                                <a class="group-methods-row__method" href="#Default">Default</a></div>
+                                            <div class="group-methods-row__right">
+                                                <span class="http-method small" data-method="GET">GET</span>
+                                                <span class="http-url">/</span></div></div>
+                                        <div class="group-methods-row">
+                                            <div class="group-methods-row__left">
+                                                <a class="group-methods-row__method" href="#search_get">search_get</a></div>
+                                            <div class="group-methods-row__right">
+                                                <span class="http-method small" data-method="GET">GET</span>
+                                                <span class="http-url">/search</span></div></div>
+                                        <div class="group-methods-row">
+                                            <div class="group-methods-row__left">
+                                                <a class="group-methods-row__method" href="#recom_get">recom_get</a></div>
+                                            <div class="group-methods-row__right">
+                                                <span class="http-method small" data-method="GET">GET</span>
+                                                <span class="http-url">/recom</span></div></div>
+                                        <div class="group-methods-row">
+                                            <div class="group-methods-row__left">
+                                                <a class="group-methods-row__method" href="#quote_get">quote_get</a></div>
+                                            <div class="group-methods-row__right">
+                                                <span class="http-method small" data-method="GET">GET</span>
+                                                <span class="http-url">/quote</span></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-3 spec-item__type-method">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="Default">
+                                <div class="spec-item-header" data-entity="method" data-entity-id="Default">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#Default"></a>Default</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-attributes"></div>
+                                <div class="spec-item-section">
+                                    <div class="method-http-details">
+                                        <span class="http-method" data-method="GET">GET</span>
+                                        <span class="http-url">/</span></div></div>
+                                <div class="description spec-item__description"><p>Short description of API</p>
+</div>
+                                <div class="spec-item-section">
+                                    <h4>Responses</h4>
+                                    <div class="method-responses">
+                                        <div class="method-response">
+                                                <div class="response-details">
+                                                    <div class="response-details__left">
+                                                        <span class="response-details__status" data-response-status="200">200</span>
+                                                        <span class="response-details__name">200</span></div>
+                                                    <div class="response-details__right">
+                                                        <div class="description"><p>Successful operation</p>
+</div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-3 spec-item__type-method">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="search_get">
+                                <div class="spec-item-header" data-entity="method" data-entity-id="search_get">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#search_get"></a>search_get</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-attributes"></div>
+                                <div class="spec-item-section">
+                                    <div class="method-http-details">
+                                        <span class="http-method" data-method="GET">GET</span>
+                                        <span class="http-url">/search</span></div></div>
+                                <div class="description spec-item__description"><p>Search for anime by keyword</p>
+</div>
+                                <div class="spec-item-section">
+                                    <h4>Request parameters</h4>
+                                    <div class="parameters-list">
+                                            <div class="param">
+                                                <div class="param__left">
+                                                    <div class="schema-property__name">
+                                                        <span>s_query</span></div>
+                                                    <div class="schema-property__type">
+                                                        <span class="primitive">string</span>
+                                                        <i class="schema-property__required" data-required="false">optional</i></div></div>
+                                                <div class="param__right">
+                                                    <div class="description"><p>Search query</p>
+</div></div></div></div></div>
+                                <div class="spec-item-section">
+                                    <h4>Responses</h4>
+                                    <div class="method-responses">
+                                        <div class="method-response">
+                                                <div class="response-details">
+                                                    <div class="response-details__left">
+                                                        <span class="response-details__status" data-response-status="200">200</span>
+                                                        <span class="response-details__name">200</span></div>
+                                                    <div class="response-details__right">
+                                                        <div class="description"><p>Successful operation</p>
+</div></div></div>
+                                                <div class="response-content">
+                                                    <div class="response-body">
+                                                        <h5 class="response-body__header">Body</h5>
+                                                        <div class="content-types">
+                                                            <div class="content-type">application/json</div></div>
+                                                            <div class="schema">
+                                                                <div class="schema-property__definition">
+                                                                    <div class="schema-property__left">
+                                                                        <div class="schema__type">
+                                                                            <a class="item-ref" href="#Search">Search</a></div></div>
+                                                                    <div class="schema-property__right"></div></div></div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-3 spec-item__type-method">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="recom_get">
+                                <div class="spec-item-header" data-entity="method" data-entity-id="recom_get">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#recom_get"></a>recom_get</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-attributes"></div>
+                                <div class="spec-item-section">
+                                    <div class="method-http-details">
+                                        <span class="http-method" data-method="GET">GET</span>
+                                        <span class="http-url">/recom</span></div></div>
+                                <div class="description spec-item__description"><p>Get list of recommended anime</p>
+</div>
+                                <div class="spec-item-section">
+                                    <h4>Request parameters</h4>
+                                    <div class="parameters-list">
+                                            <div class="param">
+                                                <div class="param__left">
+                                                    <div class="schema-property__name">
+                                                        <span>uID</span></div>
+                                                    <div class="schema-property__type">
+                                                        <span class="primitive">string</span>
+                                                        <i class="schema-property__required" data-required="false">optional</i></div></div>
+                                                <div class="param__right">
+                                                    <div class="description"><p>User Secret Key</p>
+</div></div></div></div></div>
+                                <div class="spec-item-section">
+                                    <h4>Responses</h4>
+                                    <div class="method-responses">
+                                        <div class="method-response">
+                                                <div class="response-details">
+                                                    <div class="response-details__left">
+                                                        <span class="response-details__status" data-response-status="200">200</span>
+                                                        <span class="response-details__name">200</span></div>
+                                                    <div class="response-details__right">
+                                                        <div class="description"><p>Successful operation</p>
+</div></div></div>
+                                                <div class="response-content">
+                                                    <div class="response-body">
+                                                        <h5 class="response-body__header">Body</h5>
+                                                        <div class="content-types">
+                                                            <div class="content-type">application/json</div></div>
+                                                            <div class="schema">
+                                                                <div class="schema-property__definition">
+                                                                    <div class="schema-property__left">
+                                                                        <div class="schema__type">
+                                                                            <a class="item-ref" href="#RecomItem">RecomItem</a></div></div>
+                                                                    <div class="schema-property__right"></div></div></div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-3 spec-item__type-method">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="quote_get">
+                                <div class="spec-item-header" data-entity="method" data-entity-id="quote_get">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#quote_get"></a>quote_get</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-attributes"></div>
+                                <div class="spec-item-section">
+                                    <div class="method-http-details">
+                                        <span class="http-method" data-method="GET">GET</span>
+                                        <span class="http-url">/quote</span></div></div>
+                                <div class="description spec-item__description"><p>Get random quote</p>
+</div>
+                                <div class="spec-item-section">
+                                    <h4>Responses</h4>
+                                    <div class="method-responses">
+                                        <div class="method-response">
+                                                <div class="response-details">
+                                                    <div class="response-details__left">
+                                                        <span class="response-details__status" data-response-status="200">200</span>
+                                                        <span class="response-details__name">200</span></div>
+                                                    <div class="response-details__right">
+                                                        <div class="description"><p>Successful operation</p>
+</div></div></div>
+                                                <div class="response-content">
+                                                    <div class="response-body">
+                                                        <h5 class="response-body__header">Body</h5>
+                                                        <div class="content-types">
+                                                            <div class="content-type">application/json</div></div>
+                                                            <div class="schema">
+                                                                <div class="schema-property__definition">
+                                                                    <div class="schema-property__left">
+                                                                        <div class="schema__type">
+                                                                            <a class="item-ref" href="#Quote">Quote</a></div></div>
+                                                                    <div class="schema-property__right"></div></div></div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-1 spec-item__type-group">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="schemas">
+                                <div class="spec-item-header" data-entity="group" data-entity-id="schemas">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#schemas"></a>Type Definitions</div></div></div>
+                            <div class="spec-item-content"></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-2 spec-item__type-schema">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="Quote">
+                                <div class="spec-item-header" data-entity="schema" data-entity-id="Quote">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#Quote"></a>Quote</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-section">
+                                        <div class="schema">
+                                            <div class="schema-property__definition">
+                                                <div class="schema-property__left">
+                                                    <div class="schema__type">
+                                                        <span class="primitive" data-schema-type="object">Object</span></div></div>
+                                                <div class="schema-property__right"></div></div>
+                                            <div class="schema-properties">
+                                                    <div class="schema-property">
+                                                        <div class="schema-property__definition">
+                                                            <div class="schema-property__left">
+                                                                <div class="schema-property__name">anime</div>
+                                                                <div class="schema-property__type">
+                                                                    <span class="primitive" data-schema-type="string">string</span></div></div>
+                                                            <div class="schema-property__right">
+                                                                <div class="schema-property-examples">
+                                                                    <span class="schema__label">Example:</span>
+                                                                    <div class="schema-property-examples__list"><span class="example-primitive token string">Attack on Titan</span></div></div></div></div></div>
+                                                    <div class="schema-property">
+                                                        <div class="schema-property__definition">
+                                                            <div class="schema-property__left">
+                                                                <div class="schema-property__name">character</div>
+                                                                <div class="schema-property__type">
+                                                                    <span class="primitive" data-schema-type="string">string</span></div></div>
+                                                            <div class="schema-property__right">
+                                                                <div class="schema-property-examples">
+                                                                    <span class="schema__label">Example:</span>
+                                                                    <div class="schema-property-examples__list"><span class="example-primitive token string">Armin Arlert</span></div></div></div></div></div>
+                                                    <div class="schema-property">
+                                                        <div class="schema-property__definition">
+                                                            <div class="schema-property__left">
+                                                                <div class="schema-property__name">quote</div>
+                                                                <div class="schema-property__type">
+                                                                    <span class="primitive" data-schema-type="string">string</span></div></div>
+                                                            <div class="schema-property__right">
+                                                                <div class="schema-property-examples">
+                                                                    <span class="schema__label">Example:</span>
+                                                                    <div class="schema-property-examples__list"><span class="example-primitive token string">We’re going to explore the outside world someday, right? Far beyond these walls, there’s flaming water land made of ice, and fields of sand spread wide. It’s the world my parents wanted to go to.</span></div></div></div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-2 spec-item__type-schema">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="SecretKey">
+                                <div class="spec-item-header" data-entity="schema" data-entity-id="SecretKey">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#SecretKey"></a>SecretKey</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-section">
+                                        <div class="schema">
+                                            <div class="schema-property__definition">
+                                                <div class="schema-property__left">
+                                                    <div class="schema__type">
+                                                        <span class="primitive" data-schema-type="object">Object</span></div></div>
+                                                <div class="schema-property__right"></div></div>
+                                            <div class="schema-properties">
+                                                    <div class="schema-property">
+                                                        <div class="schema-property__definition">
+                                                            <div class="schema-property__left">
+                                                                <div class="schema-property__name">result</div>
+                                                                <div class="schema-property__type">
+                                                                    <span class="primitive" data-schema-type="string">string</span></div></div>
+                                                            <div class="schema-property__right">
+                                                                <div class="schema-property-examples">
+                                                                    <span class="schema__label">Example:</span>
+                                                                    <div class="schema-property-examples__list"><span class="example-primitive token string">&lt;div id = "SecretKey">Your secret key is ... , remember it.&lt;/div></span></div></div></div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-2 spec-item__type-schema">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="Search">
+                                <div class="spec-item-header" data-entity="schema" data-entity-id="Search">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#Search"></a>Search</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-section">
+                                        <div class="schema">
+                                            <div class="schema-property__definition">
+                                                <div class="schema-property__left">
+                                                    <div class="schema__type">
+                                                        <span class="primitive" data-schema-type="object">Object</span></div></div>
+                                                <div class="schema-property__right"></div></div>
+                                            <div class="schema-properties">
+                                                    <div class="schema-property">
+                                                        <div class="schema-property__definition">
+                                                            <div class="schema-property__left">
+                                                                <div class="schema-property__name">result</div>
+                                                                <div class="schema-property__type">
+                                                                    <span class="primitive" data-schema-type="string">string</span></div></div>
+                                                            <div class="schema-property__right">
+                                                                <div class="schema-property-examples">
+                                                                    <span class="schema__label">Example:</span>
+                                                                    <div class="schema-property-examples__list"><span class="example-primitive token string">...&lt;div class = "anime_search">&lt;h1>English name&lt;/h1>&lt;p>Japan name&lt;/p> &lt;p> Average score: ...&lt;/p> Popularity: ... &lt;p>&lt;/p> &lt;p>Ranked: ...&lt;/p>&lt;p> Anime id: ...&lt;/p> &lt;p>More info: &lt;a href=...>MyAnimeList&lt;/a>&lt;/p>&lt;/div>...</span></div></div></div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-2 spec-item__type-schema">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="WatchedItem">
+                                <div class="spec-item-header" data-entity="schema" data-entity-id="WatchedItem">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#WatchedItem"></a>WatchedItem</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-section">
+                                        <div class="schema">
+                                            <div class="schema-property__definition">
+                                                <div class="schema-property__left">
+                                                    <div class="schema__type">
+                                                        <span class="primitive" data-schema-type="object">Object</span></div></div>
+                                                <div class="schema-property__right"></div></div>
+                                            <div class="schema-properties">
+                                                    <div class="schema-property">
+                                                        <div class="schema-property__definition">
+                                                            <div class="schema-property__left">
+                                                                <div class="schema-property__name">result</div>
+                                                                <div class="schema-property__type">
+                                                                    <span class="primitive" data-schema-type="string">string</span></div></div>
+                                                            <div class="schema-property__right">
+                                                                <div class="schema-property-examples">
+                                                                    <span class="schema__label">Example:</span>
+                                                                    <div class="schema-property-examples__list"><span class="example-primitive token string">&lt;div class = "watchItem">&lt;p> ID: {animeID} &lt;/p>&lt;p> Name: {name} &lt;/p>&lt;p> Premiered: {premiered} &lt;/p>&lt;p> Score: {score} &lt;/p>&lt;p> You have rated: {animeRate} &lt;/p>&lt;button class ="delWatch" id = "{animeID}" onclick="delFromWatch(this.id)">Delete&lt;/button>&lt;/div></span></div></div></div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-2 spec-item__type-schema">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="WishItem">
+                                <div class="spec-item-header" data-entity="schema" data-entity-id="WishItem">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#WishItem"></a>WishItem</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-section">
+                                        <div class="schema">
+                                            <div class="schema-property__definition">
+                                                <div class="schema-property__left">
+                                                    <div class="schema__type">
+                                                        <span class="primitive" data-schema-type="object">Object</span></div></div>
+                                                <div class="schema-property__right"></div></div>
+                                            <div class="schema-properties">
+                                                    <div class="schema-property">
+                                                        <div class="schema-property__definition">
+                                                            <div class="schema-property__left">
+                                                                <div class="schema-property__name">result</div>
+                                                                <div class="schema-property__type">
+                                                                    <span class="primitive" data-schema-type="string">string</span></div></div>
+                                                            <div class="schema-property__right">
+                                                                <div class="schema-property-examples">
+                                                                    <span class="schema__label">Example:</span>
+                                                                    <div class="schema-property-examples__list"><span class="example-primitive token string">...&lt;div class = "wishItem">&lt;p> ID: ... &lt;/p>&lt;p> Name: ...&lt;p> Premiered: ... &lt;/p>&lt;p> Score: ... &lt;/p>&lt;button class ="delWish" id = "..." onclick="delFromWish(this.id)">Delete&lt;/button>&lt;button class ="openMoveToWach" id = "..." onclick="openMoveWatched(this.id)">Move to Watched List&lt;/button>&lt;div id = "..._rateForm" style="display: none;">&lt;p> To move this anime to Wached list enter your rate and click Submit &lt;/p>&lt;input type="text" id="..._rate">&lt;button class ="moveToWatched" id = "..." onclick="moveWatched(this.id)">Submit&lt;/button>&lt;/div>&lt;/div>...</span></div></div></div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-2 spec-item__type-schema">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="WishAdded">
+                                <div class="spec-item-header" data-entity="schema" data-entity-id="WishAdded">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#WishAdded"></a>WishAdded</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-section">
+                                        <div class="schema">
+                                            <div class="schema-property__definition">
+                                                <div class="schema-property__left">
+                                                    <div class="schema__type">
+                                                        <span class="primitive" data-schema-type="object">Object</span></div></div>
+                                                <div class="schema-property__right"></div></div>
+                                            <div class="schema-properties">
+                                                    <div class="schema-property">
+                                                        <div class="schema-property__definition">
+                                                            <div class="schema-property__left">
+                                                                <div class="schema-property__name">result</div>
+                                                                <div class="schema-property__type">
+                                                                    <span class="primitive" data-schema-type="string">string</span></div></div>
+                                                            <div class="schema-property__right">
+                                                                <div class="schema-property-examples">
+                                                                    <span class="schema__label">Example:</span>
+                                                                    <div class="schema-property-examples__list"><span class="example-primitive token string">You have added the anime ... (premiered in ...) with rating ... to your wishlist!</span></div></div></div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-2 spec-item__type-schema">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="WatchedAdded">
+                                <div class="spec-item-header" data-entity="schema" data-entity-id="WatchedAdded">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#WatchedAdded"></a>WatchedAdded</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-section">
+                                        <div class="schema">
+                                            <div class="schema-property__definition">
+                                                <div class="schema-property__left">
+                                                    <div class="schema__type">
+                                                        <span class="primitive" data-schema-type="object">Object</span></div></div>
+                                                <div class="schema-property__right"></div></div>
+                                            <div class="schema-properties">
+                                                    <div class="schema-property">
+                                                        <div class="schema-property__definition">
+                                                            <div class="schema-property__left">
+                                                                <div class="schema-property__name">result</div>
+                                                                <div class="schema-property__type">
+                                                                    <span class="primitive" data-schema-type="string">string</span></div></div>
+                                                            <div class="schema-property__right">
+                                                                <div class="schema-property-examples">
+                                                                    <span class="schema__label">Example:</span>
+                                                                    <div class="schema-property-examples__list"><span class="example-primitive token string">You have added the anime ... (premiered in ...) with rating ... to list of watched anime! Your rate for this title is ...</span></div></div></div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                    <div class="spec-item spec-item__n-2 spec-item__type-schema">
+                        <div class="spec-item-copy">
+                            <div class="spec-item-header-locator--with-header" id="RecomItem">
+                                <div class="spec-item-header" data-entity="schema" data-entity-id="RecomItem">
+                                    <div class="spec-item-header__header">
+                                        <a class="head_anchor" href="#RecomItem"></a>RecomItem</div></div></div>
+                            <div class="spec-item-content">
+                                <div class="spec-item-section">
+                                        <div class="schema">
+                                            <div class="schema-property__definition">
+                                                <div class="schema-property__left">
+                                                    <div class="schema__type">
+                                                        <span class="primitive" data-schema-type="object">Object</span></div></div>
+                                                <div class="schema-property__right"></div></div>
+                                            <div class="schema-properties">
+                                                    <div class="schema-property">
+                                                        <div class="schema-property__definition">
+                                                            <div class="schema-property__left">
+                                                                <div class="schema-property__name">result</div>
+                                                                <div class="schema-property__type">
+                                                                    <span class="primitive" data-schema-type="string">string</span></div></div>
+                                                            <div class="schema-property__right">
+                                                                <div class="schema-property-examples">
+                                                                    <span class="schema__label">Example:</span>
+                                                                    <div class="schema-property-examples__list"><span class="example-primitive token string">&lt;div class = 'recomItem'>&lt;p> ID: {animeID} &lt;/p>&lt;p> Name: {name} &lt;/p>&lt;p> Genres: {genres} &lt;/p>&lt;p> Score: {rating} &lt;/p>&lt;p> Type: {anime_type} &lt;/p>&lt;p> Number of episodes: {episodes} &lt;/p>&lt;p> Size of community: {community} &lt;/p&lt;/div></span></div></div></div></div></div></div></div></div></div></div>
+                        <div class="spec-item-examples"></div></div>
+                <div class="spec-item spec-item--last">
+                    <div class="spec-item-copy"></div>
+                    <div class="spec-item-examples"></div></div></div></div></body></html>
